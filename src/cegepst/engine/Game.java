@@ -21,14 +21,10 @@ public abstract class Game {
         renderingEngine = new RenderingEngine();
     }
 
-    public void start() {
+    public final void start() {
         initialize();
         run();
         conclude();
-    }
-
-    public void drawBufferOnScreen() {
-        renderingEngine.renderBufferOnScreen();
     }
 
     private void run() {
@@ -37,7 +33,7 @@ public abstract class Game {
         while (playing) {
             update();
             draw(renderingEngine.getRenderingBuffer());
-            drawBufferOnScreen();
+            renderingEngine.renderBufferOnScreen();
             sleep();
         }
         renderingEngine.stop();

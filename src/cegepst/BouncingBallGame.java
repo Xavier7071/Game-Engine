@@ -34,5 +34,4 @@ public class BouncingBallGame extends Game {
     public void conclude() {
 
     }
-
 }
