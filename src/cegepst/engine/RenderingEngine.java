@@ -52,7 +52,7 @@ public class RenderingEngine {
 
     private void initializePanel() {
         panel = new JPanel();
-        panel.setBackground(Color.blue);
+        panel.setBackground(Color.blue); // Non-nécessaire
         panel.setFocusable(true);
         panel.setDoubleBuffered(true);
         frame.add(panel); // Ajouter le panneau dans le JFrame
