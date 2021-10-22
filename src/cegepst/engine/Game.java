@@ -25,6 +25,10 @@ public abstract class Game {
         conclude();
     }
 
+    public final void stop() {
+        playing = false;
+    }
+
     private void run() {
         renderingEngine.start();
         updateSyncTime();
