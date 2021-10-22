@@ -1,4 +1,4 @@
-package cegepst;
+package cegepst.bouncingBalls;
 
 public class App {
 
