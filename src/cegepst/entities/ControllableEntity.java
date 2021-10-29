@@ -1,11 +1,11 @@
 package cegepst.entities;
 
+
 import cegepst.engine.controls.MovementController;
-import cegepst.movingRectangle.InputHandler;
 
 public abstract class ControllableEntity extends MovableEntity {
 
-    private MovementController controller;
+    private final MovementController controller;
 
     public ControllableEntity(MovementController controller) {
         this.controller = controller;

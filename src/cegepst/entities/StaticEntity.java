@@ -2,19 +2,19 @@ package cegepst.entities;
 
 import cegepst.engine.Buffer;
 
-public abstract class Entity {
+public abstract class StaticEntity {
 
     protected int x;
     protected int y;
     protected int width;
     protected int height;
 
-    public abstract void draw(Buffer buffer);
-
     public void teleport(int x, int y) {
         this.x = x;
         this.y = y;
     }
+
+    public abstract void draw(Buffer buffer);
 
     public void setDimension(int width, int height) {
         this.width = width;
