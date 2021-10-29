@@ -1,4 +1,4 @@
-package cegepst.entities;
+package cegepst.engine.entities;
 
 import cegepst.engine.Buffer;
 

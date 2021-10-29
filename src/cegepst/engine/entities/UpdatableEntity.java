@@ -1,4 +1,4 @@
-package cegepst.entities;
+package cegepst.engine.entities;
 
 public abstract class UpdatableEntity extends StaticEntity {
 

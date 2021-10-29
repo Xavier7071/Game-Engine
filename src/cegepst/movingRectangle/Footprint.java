@@ -1,7 +1,7 @@
 package cegepst.movingRectangle;
 
 import cegepst.engine.Buffer;
-import cegepst.entities.StaticEntity;
+import cegepst.engine.entities.StaticEntity;
 
 import java.awt.*;
 import java.util.Random;

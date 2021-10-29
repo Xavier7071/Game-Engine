@@ -2,7 +2,7 @@ package cegepst.movingRectangle;
 
 import cegepst.engine.Buffer;
 import cegepst.engine.controls.MovementController;
-import cegepst.entities.ControllableEntity;
+import cegepst.engine.entities.ControllableEntity;
 
 import java.awt.*;
 
