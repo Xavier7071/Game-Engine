@@ -16,7 +16,7 @@ public abstract class Game {
     public abstract void conclude();
 
     public Game() {
-        renderingEngine = new RenderingEngine();
+        renderingEngine = RenderingEngine.getInstance();
     }
 
     public final void start() {
@@ -29,6 +29,7 @@ public abstract class Game {
         playing = false;
     }
 
+    @Deprecated
     public void addKeyListener(KeyListener listener) {
         renderingEngine.addKeyListener(listener);
     }

@@ -15,8 +15,6 @@ public class TankGame extends Game {
     public void initialize() {
         gamePad = new GamePad();
         tank = new Tank(gamePad);
-        addKeyListener(gamePad);
-
         missiles = new ArrayList<>();
     }
 
