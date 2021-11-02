@@ -35,7 +35,7 @@ public class Collision {
     }
 
     private int getAllowedRightSpeed() {
-        return distance(other -> other.x - (entity.y + entity.width));
+        return distance(other -> other.x - (entity.x + entity.width));
     }
 
     private int distance(DistanceCalculator calculator) {

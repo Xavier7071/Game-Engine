@@ -1,6 +1,7 @@
 package cegepst.tank;
 
 import cegepst.engine.Buffer;
+import cegepst.engine.CollidableRepository;
 import cegepst.engine.controls.Direction;
 import cegepst.engine.entities.MovableEntity;
 
@@ -31,6 +32,7 @@ public class Missile extends MovableEntity {
                 setDimension(4, 8);
             }
         }
+        CollidableRepository.getInstance().registerEntity(this);
     }
 
     @Override
