@@ -6,6 +6,7 @@ import cegepst.engine.Game;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.Mixer;
 
 public class VikingGame extends Game {
 
@@ -26,7 +27,7 @@ public class VikingGame extends Game {
 
         try {
             Clip clip = AudioSystem.getClip();
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResourceAsStream("musics/map1.wav"));
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream(this.getClass().getClassLoader().getResourceAsStream("musics/map1.wav"));
             clip.open(inputStream);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
             clip.start();
@@ -45,6 +46,15 @@ public class VikingGame extends Game {
             tree.blockadeFromTop();
         } else {
             tree.blockadeFromBottom();
+        }
+
+        soundCooldown--;
+        if (soundCooldown < 0) {
+            soundCooldown = 0;
+        }
+        if (gamePad.isFirePressed() && soundCooldown == 0) {
+            soundCooldown = 40;
+            Sound.play("sounds/best1.wav");
         }
     }
 
