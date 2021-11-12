@@ -8,9 +8,10 @@ import java.awt.image.BufferedImage;
 public class RenderingEngine {
 
     private static RenderingEngine instance;
-    private JFrame frame;
+
     private JPanel panel;
     private BufferedImage bufferedImage;
+    private Screen screen;
 
     public static RenderingEngine getInstance() {
         if (instance == null) {
@@ -34,13 +35,16 @@ public class RenderingEngine {
         graphics.dispose();
     }
 
+    public Screen getScreen() {
+        return screen;
+    }
+
     public void start() {
-        frame.setVisible(true);
+        screen.start();
     }
 
     public void stop() {
-        frame.setVisible(false);
-        frame.dispose();
+        screen.end();
     }
 
     public void addKeyListener(KeyListener listener) {
@@ -48,19 +52,14 @@ public class RenderingEngine {
     }
 
     private RenderingEngine() {
-        initializeFrame();
+        initializeScreen();
         initializePanel();
     }
 
-    private void initializeFrame() {
-        frame = new JFrame();
-        frame.setSize(800, 600);
-        frame.setLocationRelativeTo(null); // Center frame on screen
-        frame.setResizable(false);
-        frame.setTitle("--- Game ---");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setState(JFrame.NORMAL);
-        frame.setUndecorated(true); // Supprimer la barre de l'application
+    private void initializeScreen() {
+        screen = new Screen();
+        screen.setTitle("New Game");
+
     }
 
     private void initializePanel() {
@@ -68,7 +67,7 @@ public class RenderingEngine {
         panel.setBackground(Color.blue); // Non-nécessaire
         panel.setFocusable(true);
         panel.setDoubleBuffered(true);
-        frame.add(panel); // Ajouter le panneau dans le JFrame
+       screen.setPanel(panel);
     }
 
     private RenderingHints getOptimalRenderingHints() {
